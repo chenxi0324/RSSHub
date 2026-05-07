@@ -100846,7 +100846,8 @@ export default {
           {
             "source": [
               "www.playstation.com/en-sg/ps-plus/whats-new"
-            ]
+            ],
+            "target": "/monthly-games"
           }
         ],
         "name": "PlayStation Monthly Games",
