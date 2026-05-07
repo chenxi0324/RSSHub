@@ -49611,9 +49611,26 @@ export default {
         ],
         "example": "/github/pull/DIYgod/RSSHub",
         "parameters": {
-          "user": "User name",
-          "repo": "Repo name",
-          "state": "the state of pull requests. Can be either `open`, `closed`, or `all`. Default: `open`.",
+          "user": "GitHub username",
+          "repo": "GitHub repo name",
+          "state": {
+            "description": "the state of pull requests.",
+            "default": "open",
+            "options": [
+              {
+                "label": "Open",
+                "value": "open"
+              },
+              {
+                "label": "Closed",
+                "value": "closed"
+              },
+              {
+                "label": "All",
+                "value": "all"
+              }
+            ]
+          },
           "labels": "a list of comma separated label names"
         },
         "features": {
@@ -63179,6 +63196,31 @@ export default {
         "description": "\n| 全部 | 最新   | 公告         | 活动     | 新闻 |\n| ---- | ------ | ------------ | -------- | ---- |\n| ALL  | LATEST | ANNOUNCEMENT | ACTIVITY | NEWS |",
         "location": "arknights/news.ts",
         "module": () => import('@/routes/hypergryph/arknights/news.ts')
+      },
+      "/endfield/news/:group?": {
+        "path": "/endfield/news/:group?",
+        "categories": [
+          "game"
+        ],
+        "example": "/hypergryph/endfield/news",
+        "parameters": {
+          "group": "分组，默认为 `ALL`"
+        },
+        "radar": [
+          {
+            "source": [
+              "endfield.hypergryph.com/news"
+            ]
+          }
+        ],
+        "name": "明日方舟：终末地 - 游戏公告与新闻",
+        "maintainers": [
+          "E-larex"
+        ],
+        "url": "endfield.hypergryph.com/news",
+        "description": "\n| 全部 | 公告    | 活动   | 新闻 |\n| ---- | ------- | ------ | ---- |\n| ALL  | notices | events | news |",
+        "location": "endfield/news.ts",
+        "module": () => import('@/routes/hypergryph/endfield/news.ts')
       }
     },
     "apiRoutes": {},
